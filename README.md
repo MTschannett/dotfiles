@@ -11,4 +11,4 @@ Additional to my dotfile another readme can be located holding additional inform
 
 With this command we create a symlink from the a file to where we are.
 
-´´´ln -s /mnt/c/development/dotfiles/nvim/init.vim .  ´´´
+``` ln -s /mnt/c/development/dotfiles/nvim/init.vim . ```
