@@ -21,7 +21,9 @@ if dein#load_state('/home/devmin/.cache/dein')
   call dein#add('freeo/vim-kalisi')
   call dein#add('cloudhead/neovim-fuzzy')	
   call dein#add('Shougo/deoplete.nvim')
-  
+  call dein#add('prettier/vim-prettier')
+  call dein#add('townk/vim-autoclose')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -58,9 +60,27 @@ let mapleader=','
 " Add a shortcut for fuzzy search
 nnoremap <C-p> :FuzzyOpen<CR>
 
+" vertical resizing mappings
+map <leader>+ :vertical resize +4<CR>
+map <leader># :vertical resize -4<CR>
+map <leader>ö :vertical resize 40<CR>
+
 map <leader>so :source $MYVIMRC<CR>
 map <leader>e :e#<CR>
 
 " Typescript mappings
 map <leader>ti :TSImport<CR>
 map <leader>td :TSDef<CR>
+map <leader>tf :TSGetCodeFix
+map <leader>tdp :TSDefPreview<CR>
+
+" Directory Tree Configs
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2 
+let g:netrw_winsize = 25
+let g:netrw_liststyle = 3
+
+" Pretter config
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
